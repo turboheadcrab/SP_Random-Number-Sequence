@@ -1,5 +1,6 @@
 package ru.kpfu.rns;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -8,10 +9,19 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
+        int amountOfRandomNumbers = 200;
         String fileWithRandomNumbers = "files/file_with_random_numbers.txt";
         String fileWithUniqueNumbers = "files/file_with_unique_numbers.txt";
+        File f = new File("files");
+        if (!f.exists() || !f.isDirectory()) {
+            try {
+                f.mkdir();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
         try {
-            createFileAndFillWithRandomNumbers(500, fileWithRandomNumbers);
+            createFileAndFillWithRandomNumbers(amountOfRandomNumbers, fileWithRandomNumbers);
             createFileWithUniqueNumbersFromOtherFile(fileWithUniqueNumbers, fileWithRandomNumbers);
         } catch (IOException e) {
             e.printStackTrace();
