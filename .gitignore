@@ -1,5 +1,4 @@
 # Created by .ignore support plugin (hsz.mobi)
-*.class
 *.ctxt
 .mtj.tmp/
 *.jar
@@ -28,5 +27,4 @@ crashlytics-build.properties
 fabric.properties
 .idea/
 Random Number Sequence.iml
-files/
-out/
+*.txt
